@@ -23,7 +23,7 @@ export const SidebarData = [
 
     {
         title: 'Sign-In',
-        path: '/',
+        path: '/LogIn',
         icon: <VscAccount />,
         cName: 'nav-text'
     },
