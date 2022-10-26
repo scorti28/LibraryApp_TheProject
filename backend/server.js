@@ -7,10 +7,17 @@ const items = require('./routes/api/items');
 const userRoutes = require('./routes/api/userRoutes');
 const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 
+var cors = require("cors");
+
 const app = express();
+//const cors = require("cors");
+app.use(cors());
+app.use(express.json());
  
 //Bodyparser Middleware
 app.use(bodyParser.json());
+//app.use(cors());
+
 
 // DB Config
 const db = require('./config/keys').mongoURI;
