@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Col, Form, Row} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MainScreen from "../MainScreen";
 import "./Login.css";
 import axios from "axios";
+import ErrorMessage from "../ErrorMessage";
+import { useNavigate } from "react-router-dom";
+
 
 axios.defaults.baseURL = "http://localhost:5000";
 
-const LoginForm = () => {
+const LoginForm = ({history}) => {
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [error, setError] = useState(false);
    const [loading, setLoading] = useState(false);
 
+   const navigate = useNavigate();
    const submitHandler = async (e) => {
     e.preventDefault();
     
@@ -38,11 +42,16 @@ const LoginForm = () => {
       setError(error.response.data.message);
       setLoading(false);
     }
+    navigate('/');
+
    };
+
+
  
   return (
     <MainScreen title="LOGIN">
       <div className="loginContainer">
+        {error && <ErrorMessage variant="danger">{ error }</ErrorMessage>}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
