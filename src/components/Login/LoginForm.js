@@ -42,12 +42,11 @@ const LoginForm = ({history}) => {
       setError(error.response.data.message);
       setLoading(false);
     }
-    navigate('/');
+    navigate('//localhost:3001');
 
    };
 
 
- 
   return (
     <MainScreen title="LOGIN">
       <div className="loginContainer">
