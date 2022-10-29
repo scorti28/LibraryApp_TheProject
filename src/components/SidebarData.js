@@ -10,7 +10,7 @@ import { BiArrowFromRight } from "react-icons/bi";
 export const SidebarData = [
     {
         title: 'Home',
-        path: '/',
+        path: '//localhost:3001',
         icon: <AiOutlineHome />,
         cName: 'nav-text'
     },
@@ -31,7 +31,7 @@ export const SidebarData = [
 
     {
         title: 'Log-Out',
-        path: '/',
+        path: '//localhost:3001',
         icon: <BiArrowFromRight />,
         cName: 'nav-text',
         onclick: buttonLogOut
