@@ -5,6 +5,7 @@ import { IconName } from "react-icons/io";
 import { AiOutlineHome } from "react-icons/ai";
 import { SlBasket } from "react-icons/sl";
 import { VscAccount } from "react-icons/vsc";
+import { BiArrowFromRight } from "react-icons/bi";
 
 export const SidebarData = [
     {
@@ -28,5 +29,17 @@ export const SidebarData = [
         cName: 'nav-text'
     },
 
+    {
+        title: 'Log-Out',
+        path: '/',
+        icon: <BiArrowFromRight />,
+        cName: 'nav-text',
+        onclick: buttonLogOut
+    },
 
 ]
+
+function buttonLogOut(){
+    localStorage.removeItem("userInfo");
+    localStorage.removeItem("songInfo");
+}

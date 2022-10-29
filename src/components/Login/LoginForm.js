@@ -34,7 +34,7 @@ const LoginForm = ({history}) => {
           email,password
       }, config);
 
-      console.log(data);
+      //console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
     } catch (error) {
@@ -82,6 +82,7 @@ const LoginForm = ({history}) => {
         </Row>
       </div>
     </MainScreen>
+    
   );
 };
 
